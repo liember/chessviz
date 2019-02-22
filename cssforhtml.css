@@ -1,7 +1,7 @@
 
 html{
-    background-color: #111111;
-    background-image: url(resourse/dot.png);
+    background-size: cover;
+    background-image: url(resourse/orig.jpeg);
     padding:0;
     margin: 0;
 }
@@ -9,15 +9,17 @@ html{
 body {
     padding:0;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
 }
 
 .interface{
-    background: rgba(50, 50, 50, .9);
-    margin: 90px;
-    padding: 10px;
-    border: 4px double rgb(78, 61, 61);
-    border-style: solid;
-    border-radius: 20px;
+    background: rgba(209, 17, 17, 0.4);
+    padding: 15px;
+    margin-left: 10vw; 
+    width: 800px;
+    margin-top: 10vh;
 }
 
 .menu{
@@ -35,14 +37,14 @@ body {
 .Chessboard{
     display: inline-block;
     background: #111111;
-    width: 412px;
-    height: 412px;
+    width: 384px;
+    height: 384px;
     border: 4px double black;
     border-style: solid;
-    padding: 10px;
 }
 
 .square{
+    float: left;
     margin: 0px, 0px ,0px, 0px;
     padding: 0px, 0px, 0px, 0px;
     border: 0px double black;
@@ -63,4 +65,20 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
+}
+
+.sidebar{
+    background-color: rgba(0, 0, 0, 0.949);
+    display: inline-block;
+    width: 16vw;
+    height: 100vh;
+    float: left;
+}
+
+.content{
+    background-color: rgba(37, 37, 37, 0.849);
+    display: inline-block;
+    float: left;
+    height: 100vh;
+    width: 84vw;
 }
