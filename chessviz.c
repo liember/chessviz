@@ -161,6 +161,7 @@ int main()
         return 1;
     } // открыть файл удалось
 
+    sum = feof(fp);
     while (!sum)
     {
         fscanf(fp, "%c", &a);
