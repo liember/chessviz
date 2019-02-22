@@ -21,6 +21,64 @@ typedef struct //положение фигРЫ
     int oy;
 } figure_coordinate;
 
+int createfigurehtml(int element)
+{
+    switch (element)
+    {
+    case WPAWN:
+        printf("<img class=\"figure\" src=\"resourse/white/pawn.png\">");
+        return 0;
+        break;
+    case WKNIGHT:
+        printf("<img class=\"figure\" src=\"resourse/white/knight.png\">");
+        return 0;
+        break;
+    case WBISHOP:
+        printf("<img class=\"figure\" src=\"resourse/white/bishop.png\">");
+        return 0;
+        break;
+    case WROOK:
+        printf("<img class=\"figure\" src=\"resourse/white/rook.png\">");
+        return 0;
+        break;
+    case WQUEEN:
+        printf("<img class=\"figure\" src=\"resourse/white/queen.png\">");
+        return 0;
+        break;
+    case WKING:
+        printf("<img class=\"figure\" src=\"resourse/white/king.png\">");
+        return 0;
+        break;
+    case BPAWN:
+        printf("<img class=\"figure\" src=\"resourse/black/pawn.png\">");
+        return 0;
+        break;
+    case BKNIGHT:
+        printf("<img class=\"figure\" src=\"resourse/black/knight.png\">");
+        return 0;
+        break;
+    case BBISHOP:
+        printf("<img class=\"figure\" src=\"resourse/black/bishop.png\">");
+        return 0;
+        break;
+    case BROOK:
+        printf("<img class=\"figure\" src=\"resourse/black/rook.png\">");
+        return 0;
+        break;
+    case BQUEEN:
+        printf("<img class=\"figure\" src=\"resourse/black/queen.png\">");
+        return 0;
+        break;
+    case BKING:
+        printf("<img class=\"figure\" src=\"resourse/black/king.png\">");
+        return 0;
+        break;
+    default:
+        return 0;
+        break;
+    }
+}
+
 void createhtml(int *table)
 {
     int figure;
@@ -45,11 +103,19 @@ void createhtml(int *table)
         for (int m = 0; m < 8; m++)
         {
             if ((n + m) % 2 == 0)
-                printf("<div class=\"black square\"></div>");
+            {
+                printf("<div class=\"black square\">");
+                createfigurehtml(table[figure]);
+                printf("</div>\n");
+            }
             else
-                printf("<div class=\"white square\"></div>");
+            {
+                printf("<div class=\"white square\">");
+                createfigurehtml(table[figure]);
+                printf("</div>\n");
+            }
+            figure++;
         }
-        printf("\n");
     }
 
     //code
@@ -72,7 +138,7 @@ void createhtml(int *table)
 //-----------------------------------------------------------------------------
 int main()
 {
-    int chesstable[64] = {WROOK, WKNIGHT, WBISHOP, WKING, WQUEEN, WBISHOP, WKNIGHT, BROOK,
+    int chesstable[64] = {WROOK, WKNIGHT, WBISHOP, WKING, WQUEEN, WBISHOP, WKNIGHT, WROOK,
                           WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN,
                           EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
                           EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
