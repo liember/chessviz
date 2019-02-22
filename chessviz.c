@@ -1,15 +1,20 @@
 #include <stdio.h>
 
-#define PAWN 0
-#define KNIGHT 1
-#define BISHOP 2
-#define ROOK 3
-#define QUEEN 4
-#define KING 5
+#define WPAWN 0
+#define WKNIGHT 1
+#define WBISHOP 2
+#define WROOK 3
+#define WQUEEN 4
+#define WKING 5
 
-#define EMPTY 6
-#define WHITE 0
-#define BLACK 1
+#define BPAWN 6
+#define BKNIGHT 7
+#define BBISHOP 8
+#define BROOK 9
+#define BQUEEN 10
+#define BKING 11
+
+#define EMPTY 12
 
 typedef struct //положение фигРЫ
 {
@@ -20,7 +25,9 @@ typedef struct //положение фигРЫ
 
 int main()
 {
-    FILE *fp;
+
+    int
+        FILE *fp;
     char name[] = "input.inst";
     char a;
     int sum;
