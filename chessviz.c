@@ -19,15 +19,23 @@ struct square_coordinate
 
 int main()
 {
-    FILE *inp;
-    FILE *out;
+    FILE *fp;
     char name[] = "input.inst";
+    char a;
+    int sum;
 
     if ((fp = fopen(name, "r")) == NULL)
     {
         printf("Не удалось открыть файл шахматных нотаций для воспроизведения партии");
         getchar();
         return 1;
+    }
+
+    while (!sum)
+    {
+        fscanf(fp, "%c", &a);
+        printf("%c\n", a);
+        sum = feof(fp);
     }
 
     // открыть файл удалось
