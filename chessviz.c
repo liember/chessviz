@@ -21,8 +21,9 @@ typedef struct //положение фигРЫ
     int oy;
 } figure_coordinate;
 
-void createhtml(int *table, int *step)
+void createhtml(int *table)
 {
+    int figure;
     printf("<!DOCTYPE HTML\n");
     printf("<html>\n");
     printf("<head>\n");
@@ -39,6 +40,18 @@ void createhtml(int *table, int *step)
     printf("<div class=\"interface\">\n");
     printf("<div class=\"Chessboard\">\n");
     //code
+    for (int n = 0; n < 8; n++)
+    {
+        for (int m = 0; m < 8; m++)
+        {
+            if ((n + m) % 2 == 0)
+                printf("<div class=\"black square\"></div>");
+            else
+                printf("<div class=\"white square\"></div>");
+        }
+        printf("\n");
+    }
+
     //code
     printf("</div>\n");
     printf("<div class=\"menu\">\n");
@@ -59,19 +72,21 @@ void createhtml(int *table, int *step)
 //-----------------------------------------------------------------------------
 int main()
 {
-    int chesstable[64] = {BROOK, BKNIGHT, BBISHOP, BQUEEN, BKING, BBISHOP, BKNIGHT, BROOK,
-                          BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN,
-                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
-                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
-                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
-                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+    int chesstable[64] = {WROOK, WKNIGHT, WBISHOP, WKING, WQUEEN, WBISHOP, WKNIGHT, BROOK,
                           WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN,
-                          WROOK, WKNIGHT, WBISHOP, WQUEEN, WKING, WBISHOP, WKNIGHT, WROOK};
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN,
+                          BROOK, BKNIGHT, BBISHOP, BKING, BQUEEN, BBISHOP, BKNIGHT, BROOK};
 
     FILE *fp;
     char name[] = "input.inst";
     char a;
     int sum;
+
+    createhtml(&chesstable[0]);
 
     if ((fp = fopen(name, "r")) == NULL)
     {
