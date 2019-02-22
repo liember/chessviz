@@ -6,14 +6,12 @@
 #define WROOK 3
 #define WQUEEN 4
 #define WKING 5
-
 #define BPAWN 6
 #define BKNIGHT 7
 #define BBISHOP 8
 #define BROOK 9
 #define BQUEEN 10
 #define BKING 11
-
 #define EMPTY 12
 
 typedef struct //положение фигРЫ
@@ -25,9 +23,16 @@ typedef struct //положение фигРЫ
 
 int main()
 {
+    int chesstable[64] = {BROOK, BKNIGHT, BBISHOP, BQUEEN, BKING, BBISHOP, BKNIGHT, BROOK,
+                          BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY,
+                          WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN, WPAWN,
+                          WROOK, WKNIGHT, WBISHOP, WQUEEN, WKING, WBISHOP, WKNIGHT, WROOK};
 
-    int
-        FILE *fp;
+    FILE *fp;
     char name[] = "input.inst";
     char a;
     int sum;
