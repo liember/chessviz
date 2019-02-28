@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "drawdesk.h"
+
 int createfigurehtml(int element)
 {
     switch (element)
