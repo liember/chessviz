@@ -15,11 +15,12 @@ body {
 }
 
 .interface{
-    background: rgba(209, 17, 17, 0.4);
+    background: rgba(111, 121, 110, 0.185);
     padding: 15px;
-    margin-left: 10vw; 
+    margin-left: 5vw; 
     width: 800px;
     margin-top: 10vh;
+    position: relative;
 }
 
 .menu{
@@ -70,7 +71,7 @@ body {
 .sidebar{
     background-color: rgba(0, 0, 0, 0.949);
     display: inline-block;
-    width: 16vw;
+    width: 20vw;
     height: 100vh;
     float: left;
 }
@@ -80,5 +81,41 @@ body {
     display: inline-block;
     float: left;
     height: 100vh;
-    width: 84vw;
+    width: 78vw;
+    overflow: hidden;
+}
+
+.button{
+    float: left;
+    border: 4px double #66FF66;
+    border-style: solid;
+    border-radius: 5em;
+    padding: 10px;
+    margin-left: 30px;
+    margin-top: 100px;
+    font-size: 49px;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #65883879;
+    text-align: center;
+}
+
+.button:hover{
+    font-size: 50px;
+}
+
+.shadow {
+    box-shadow: 12px 12px 35px -4px #000000;
+   }
+
+.grayy{
+    float: left;
+    width: 5vw;
+    height: 100vh;
+    background: #313131c7;
+}
+.blacky{
+    height: 100vh;
+    float: left;
+    width: 15vw;
 }
