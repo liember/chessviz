@@ -3,8 +3,7 @@
 *.log
 *.o
 *.json
+chessviz
 TEST.html
 input.inst
 # (корнём считается расположение файла .gitignore)
-
-
