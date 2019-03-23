@@ -8,3 +8,13 @@ TEST.html
 input.inst
 chessviz
 # (корнём считается расположение файла .gitignore)
+
+\.vscode/ipch/123bcc19d7c4487f/mmap_address\.bin
+
+\.vscode/ipch/123bd519d7c457ca/drawdesk\.ipch
+
+\.vscode/ipch/123bd519d7c457ca/mmap_address\.bin
+
+\.vscode/ipch/169859bf5e6e0b1c/chessviz\.ipch
+
+\.vscode/ipch/169859bf5e6e0b1c/mmap_address\.bin
