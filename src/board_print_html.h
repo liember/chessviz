@@ -15,14 +15,7 @@
 #define BKING 11
 #define EMPTY 12
 
-typedef struct //положение фигРЫ
-{
-    char figure;
-    int ox;
-    int oy;
-} figure_coordinate;
-
-int createfigurehtml(int element);
-void createhtml(int *table);
+int createfigurehtml(int element, FILE *outputhtmlpage);
+void createhtml(int *table, int step);
 
 #endif
