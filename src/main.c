@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "drawdesk.h"
+#include "board_print_html.h"
 #include "fileworks.h"
 
 int main()
@@ -14,12 +14,12 @@ int main()
                           BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN, BPAWN,
                           BROOK, BKNIGHT, BBISHOP, BKING, BQUEEN, BBISHOP, BKNIGHT, BROOK};
 
-    
-FILE *inputfile;
+    FILE *inputfile;
+
     char result_string[20];
     char *fname = "input.txt";
 
-    int step = 1;
+    //int step = 1;
 
     inputfile = fopen(fname, "r");
 
@@ -37,8 +37,8 @@ FILE *inputfile;
             {
                 //figure1 = identify_figure(result_string[j + 1]);
                 //figure2 = identify_figure(result_string[j + 5]);
-                //execute_comand(figure1, result_string[j + 4], figure2,chesstable);
-                createhtml(step++,chesstable);
+                // execute_comand(figure1, result_string[j + 4], figure2);
+                //createhtml(step++,chesstable);
             }
         }
     }
