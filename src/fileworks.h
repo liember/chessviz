@@ -8,6 +8,6 @@ typedef struct //положение фигРЫ
     int oy;
 } figure_coordinate;
 
-identify_figure(char f);
+figure_coordinate identify_figure(char f);
 
 #endif

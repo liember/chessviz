@@ -19,7 +19,7 @@ int main()
     char result_string[20];
     char *fname = "input.txt";
 
-    //int step = 1;
+    int step = 1;
 
     inputfile = fopen(fname, "r");
 
@@ -35,10 +35,10 @@ int main()
         {
             if (result_string[j] == " ")
             {
-                //figure1 = identify_figure(result_string[j + 1]);
-                //figure2 = identify_figure(result_string[j + 5]);
-                // execute_comand(figure1, result_string[j + 4], figure2);
-                //createhtml(step++,chesstable);
+                figure_coordinate figure1 = identify_figure(result_string[j + 1]);
+                figure_coordinate figure2 = identify_figure(result_string[j + 5]);
+                //execute_comand(figure1, result_string[j + 4], figure2);
+                createhtml(step++, chesstable);
             }
         }
     }
