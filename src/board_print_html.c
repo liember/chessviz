@@ -1,5 +1,21 @@
-#include "board_print_html.h"
 #include <stdio.h>
+#include <string.h>
+#include "board_print_html.h"
+#include "fileworks.h"
+
+#define WPAWN 0
+#define WKNIGHT 1
+#define WBISHOP 2
+#define WROOK 3
+#define WQUEEN 4
+#define WKING 5
+#define BPAWN 6
+#define BKNIGHT 7
+#define BBISHOP 8
+#define BROOK 9
+#define BQUEEN 10
+#define BKING 11
+#define EMPTY 12
 
 int createfigurehtml(int element, FILE *outputhtmlpage)
 {
@@ -62,7 +78,7 @@ int createfigurehtml(int element, FILE *outputhtmlpage)
 void createhtml(int *table, int step)
 {
     FILE *outputhtmlpage;
-    char fname;
+    char fname[10];
     sprintf(fname, "%d.txt", step);
     outputhtmlpage = fopen(fname, "w");
     int figure;
@@ -90,13 +106,13 @@ void createhtml(int *table, int step)
             if ((n + m) % 2 == 0)
             {
                 fprintf(outputhtmlpage, "<div class=\"black square\">");
-                createfigurehtml(table[figure], &outputhtmlpage);
+                createfigurehtml(table[figure], outputhtmlpage);
                 fprintf(outputhtmlpage, "</div>\n");
             }
             else
             {
                 fprintf(outputhtmlpage, "<div class=\"white square\">");
-                createfigurehtml(table[figure], &outputhtmlpage);
+                createfigurehtml(table[figure], outputhtmlpage);
                 fprintf(outputhtmlpage, "</div>\n");
             }
             figure++;

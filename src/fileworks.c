@@ -1,5 +1,8 @@
-#include "fileworks.h"
 #include <stdio.h>
+#include <string.h>
+#include "board_print_html.h"
+#include "fileworks.h"
+#include "logicworks.h"
 
 #define ERROR 99
 
@@ -13,9 +16,9 @@
 figure_coordinate identify_figure(char *f)
 {
     figure_coordinate returnity;
-    returnity.figure = getfigure(f);
-    returnity.ox = getfigureox(f + 1);
-    returnity.oy = getfigureoy(f + 2);
+    returnity.figure = getfigure(*f);
+    returnity.ox = getfigureox(*f + 1);
+    returnity.oy = getfigureoy(*f + 2);
     return returnity;
 }
 
@@ -52,28 +55,28 @@ int getfigureox(char f)
     switch (f)
     {
     case 'a':
-        return KING;
+        return 0;
         break;
     case 'b':
-        return QUEEN;
+        return 1;
         break;
     case 'c':
-        return ROOK;
+        return 2;
         break;
     case 'd':
-        return KNIGHT;
+        return 3;
         break;
     case 'e':
-        return BISHOP;
+        return 4;
         break;
     case 'f':
-        return PAWN;
+        return 5;
         break;
     case 'g':
-        return PAWN;
+        return 6;
         break;
     case 'h':
-        return PAWN;
+        return 7;
         break;
     default:
         printf("Uncorrect input char cordinate");
@@ -81,32 +84,33 @@ int getfigureox(char f)
     }
 }
 
-int getfigureoy(char f{
+int getfigureoy(char f)
+{
     switch (f)
     {
     case '1':
-        return KING;
+        return 0;
         break;
     case '2':
-        return QUEEN;
+        return 1;
         break;
     case '3':
-        return ROOK;
+        return 2;
         break;
     case '4':
-        return KNIGHT;
+        return 3;
         break;
     case '5':
-        return BISHOP;
+        return 4;
         break;
     case '6':
-        return PAWN;
+        return 5;
         break;
     case '7':
-        return PAWN;
+        return 6;
         break;
     case '8':
-        return PAWN;
+        return 7;
         break;
     default:
         printf("Uncorrect input digit cordinate");
