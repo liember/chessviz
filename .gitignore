@@ -11,3 +11,4 @@ chessviz
 # (корнём считается расположение файла .gitignore)
 
 \.vscode*
+*.txt
