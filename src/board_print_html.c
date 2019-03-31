@@ -83,21 +83,7 @@ void createhtml(int *table, int step)
     outputhtmlpage = fopen(fname, "w");
     int figure;
 
-    fprintf(outputhtmlpage, "<!DOCTYPE HTML\n");
-    fprintf(outputhtmlpage, "<html>\n");
-    fprintf(outputhtmlpage, "<head>\n");
-    fprintf(outputhtmlpage, "<meta charset=\"utf-8\">\n");
-    fprintf(outputhtmlpage, "<link rel=\"stylesheet\" href=\"cssforhtml.css\">\n");
-    fprintf(outputhtmlpage, "<title>Chess game</title>\n");
-    fprintf(outputhtmlpage, "</head>\n");
-    fprintf(outputhtmlpage, "<body>\n");
-    fprintf(outputhtmlpage, "<div class=\"contain\">\n");
-    fprintf(outputhtmlpage, "<aside class=\"sidebar\">\n");
-    fprintf(outputhtmlpage, "<p>Chess game</p>\n");
-    fprintf(outputhtmlpage, "</aside>\n");
-    fprintf(outputhtmlpage, "<div class=\"content\">\n");
-    fprintf(outputhtmlpage, "<div class=\"interface\">\n");
-    fprintf(outputhtmlpage, "<div class=\"Chessboard\">\n");
+    fprintf(outputhtmlpage, "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><link rel=\"stylesheet\" href=\"styles.css\"><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\"integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><title>ChessVis</title></head><body><div class=\"container mt-3\"><h1>ChessVis</h1><hr><h3>The program of the year edition</h3></div><div class=\"container mt-3\"><div class=" row\"><div class=\"col-md-4\"><div class=\"Chessboard\">");
     //code
     for (int n = 0; n < 8; n++)
     {
@@ -120,16 +106,5 @@ void createhtml(int *table, int step)
     }
 
     //code
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "<div class=\"menu\">\n");
-    fprintf(outputhtmlpage, "<div class=\"titl\">\n");
-    fprintf(outputhtmlpage, "<p>Шахматs<p>\n");
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "<div class=\"clear\"></div>\n");
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "</div>\n");
-    fprintf(outputhtmlpage, "</body>\n");
-    fprintf(outputhtmlpage, "</html>\n");
+    fprintf(outputhtmlpage, "</div></div><div class=\"col-md-4 container\">  <div class=\"container mb-3\">   <a class=\"btn btn-primary\" href=\"#\">предыдущий ход</a>  <a class=\"btn btn-primary ml-2\" href=\"#\">следующий ход</a></div> <div class=\"container\"> <p>1. e2-e4 e7-e5</p><p> 2. Bf1-c4 Nb8-c6</p><p> 3. Qd1-h5 Ng8-f6</p><p class=\"btn-dark rounded p-1\"> 4. Qh5xf7#</p></div></div><div class=\"col-md-4\"><div class=\"card mt-1\" style=\"width: 18rem;\"><img src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div class=\"card-body\"><h5 class=\"card-title\">Open source code</h5><p class=\"card-text\">Check source code in my GitHub. Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to GitHubq</a></div></div></div></div></div></div></body></html></html>\n");
 }
