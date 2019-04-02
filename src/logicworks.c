@@ -41,13 +41,15 @@ void execute_comand(figure_coordinate figure, char comand, figure_coordinate fig
 
 void movepawn(figure_coordinate figure, figure_coordinate figuretarget, int *table)
 {
-    int a = figure.ox * 7 + figure.oy;
-    int b = figuretarget.ox * 8 + figuretarget.oy;
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
     swap(&table[a], &table[b]);
 }
 
 void swap(int *a, int *b)
 {
     int t;
-    t = *a, *a = *b, *b = t;
+    t = *a;
+    *a = *b;
+    *b = t;
 }

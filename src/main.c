@@ -48,10 +48,12 @@ int main()
         {
             if (result_string[j] == ' ')
             {
+                printf("start from %c \n", result_string[j + 1]);
                 figure_coordinate figure1 = identify_figure(&result_string[j + 1]);
                 figure_coordinate figuretarget = identify_figure(&result_string[j + 5]);
                 execute_comand(figure1, result_string[j + 4], figuretarget, chesstable);
                 createhtml(chesstable, step++);
+                printf("end \n");
             }
         }
     }
