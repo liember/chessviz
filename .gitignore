@@ -12,3 +12,7 @@ chessviz
 
 \.vscode*
 *.txt
+
+*.bin
+
+*.ipch
