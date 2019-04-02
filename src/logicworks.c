@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include "board_print_html.h"
 #include "fileworks.h"
 #include "logicworks.h"
 
@@ -35,13 +35,13 @@ void execute_comand(figure_coordinate figure, char comand, figure_coordinate fig
         movepawn(figure, figuretarget, table);
         break;
     default:
-        printf("Uncorrect figure");
+        printf("Uncorrect figure\n");
     }
 }
 
 void movepawn(figure_coordinate figure, figure_coordinate figuretarget, int *table)
 {
-    int a = figure.ox * 8 + figure.oy;
+    int a = figure.ox * 7 + figure.oy;
     int b = figuretarget.ox * 8 + figuretarget.oy;
     swap(&table[a], &table[b]);
 }

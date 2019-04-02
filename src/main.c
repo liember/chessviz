@@ -36,7 +36,7 @@ int main()
     inputfile = fopen(fname, "r");
     if (inputfile == NULL)
     {
-        printf("не могу открыть файл '%s'", fname);
+        printf("не могу открыть файл '%s'\n", fname);
         return 1;
     }
 
@@ -56,6 +56,6 @@ int main()
         }
     }
     fclose(inputfile);
-    printf("Воспроизведение партии успешно завершено.");
+    printf("Воспроизведение партии успешно завершено.\n");
     return 0;
 }

@@ -1,10 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include "board_print_html.h"
 #include "fileworks.h"
-#include "logicworks.h"
 
-#define ERROR 99
+#define ERROR 0
 
 #define KING 1
 #define QUEEN 2
@@ -45,7 +44,7 @@ int getfigure(char f)
         return PAWN;
         break;
     default:
-        printf("Uncorrect figure");
+        printf("Uncorrect figure %c \n", f);
         return ERROR;
     }
 }
@@ -79,7 +78,7 @@ int getfigureox(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input char cordinate");
+        printf("Uncorrect input char cordinate %c \n", f);
         return ERROR;
     }
 }
@@ -113,7 +112,7 @@ int getfigureoy(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input digit cordinate");
+        printf("Uncorrect input digit cordinate %c \n", f);
         return ERROR;
     }
 }
