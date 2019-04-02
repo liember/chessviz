@@ -106,5 +106,14 @@ void createhtml(int *table, int step)
     }
 
     //code
-    fprintf(outputhtmlpage, "</div></div><div class=\"col-md-4 container\">  <div class=\"container mb-3\">   <a class=\"btn btn-primary\" href=\"#\">предыдущий ход</a>  <a class=\"btn btn-primary ml-2\" href=\"#\">следующий ход</a></div> <div class=\"container\"> <p>1. e2-e4 e7-e5</p><p> 2. Bf1-c4 Nb8-c6</p><p> 3. Qd1-h5 Ng8-f6</p><p class=\"btn-dark rounded p-1\"> 4. Qh5xf7#</p></div></div><div class=\"col-md-4\"><div class=\"card mt-1\" style=\"width: 18rem;\"><img src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div class=\"card-body\"><h5 class=\"card-title\">Open source code</h5><p class=\"card-text\">Check source code in my GitHub. Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to GitHubq</a></div></div></div></div></div></div></body></html></html>\n");
+    fprintf(outputhtmlpage, "</div></div><div class=\"col-md-4 container\">  <div class=\"container mb-3\"> ");
+    fprintf(outputhtmlpage, " <a class =\"btn btn-primary\" href=\"");
+    sprintf(fname, "%d.html", step - 1);
+    fprintf(outputhtmlpage, "%s", fname);
+    fprintf(outputhtmlpage, "\">предыдущий ход</a>");
+    fprintf(outputhtmlpage, " <a class =\"btn btn-primary ml-2\" href=\"");
+    sprintf(fname, "%d.html", step + 1);
+    fprintf(outputhtmlpage, "%s", fname);
+    fprintf(outputhtmlpage, " \">следующий ход</a></div>");
+    fprintf(outputhtmlpage, " <div class =\"container\"> <p>1. e2-e4 e7-e5</p><p> 2. Bf1-c4 Nb8-c6</p><p> 3. Qd1-h5 Ng8-f6</p><p class=\"btn-dark rounded p-1\"> 4. Qh5xf7#</p></div></div><div class=\"col-md-4\"><div class=\"card mt-1\" style=\"width: 18rem;\"><img src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div class=\"card-body\"><h5 class=\"card-title\">Open source code</h5><p class=\"card-text\">Check source code in my GitHub. Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to GitHubq</a></div></div></div></div></div></div></body></html></html>\n");
 }
