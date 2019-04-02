@@ -22,51 +22,51 @@ int createfigurehtml(int element, FILE *outputhtmlpage)
     switch (element)
     {
     case WPAWN:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/pawn.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/pawn.png\">");
         return 0;
         break;
     case WKNIGHT:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/knight.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/knight.png\">");
         return 0;
         break;
     case WBISHOP:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/bishop.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/bishop.png\">");
         return 0;
         break;
     case WROOK:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/rook.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/rook.png\">");
         return 0;
         break;
     case WQUEEN:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/queen.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/queen.png\">");
         return 0;
         break;
     case WKING:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/white/king.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/white/king.png\">");
         return 0;
         break;
     case BPAWN:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/pawn.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/pawn.png\">");
         return 0;
         break;
     case BKNIGHT:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/knight.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/knight.png\">");
         return 0;
         break;
     case BBISHOP:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/bishop.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/bishop.png\">");
         return 0;
         break;
     case BROOK:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/rook.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/rook.png\">");
         return 0;
         break;
     case BQUEEN:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/queen.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/queen.png\">");
         return 0;
         break;
     case BKING:
-        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"resourse/black/king.png\">");
+        fprintf(outputhtmlpage, "<img class=\"figure\" src=\"img/black/king.png\">");
         return 0;
         break;
     default:
@@ -79,9 +79,9 @@ void createhtml(int *table, int step)
 {
     FILE *outputhtmlpage;
     char fname[10];
-    sprintf(fname, "%d.txt", step);
+    sprintf(fname, "%d.html", step);
     outputhtmlpage = fopen(fname, "w");
-    int figure;
+    int figure = 0;
 
     fprintf(outputhtmlpage, "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><link rel=\"stylesheet\" href=\"styles.css\"><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\"integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><title>ChessVis</title></head><body><div class=\"container mt-3\"><h1>ChessVis</h1><hr><h3>The program of the year edition</h3></div><div class=\"container mt-3\"><div class=\"row\"><div class=\"col-md-4\"><div class=\"Chessboard\">");
     //code
