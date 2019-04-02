@@ -16,14 +16,16 @@
 figure_coordinate identify_figure(char *f)
 {
     figure_coordinate returnity;
-    returnity.figure = getfigure(*f);
-    returnity.ox = getfigureox(*f + 1);
-    returnity.oy = getfigureoy(*f + 2);
+    returnity.figure = getfigure(f[0]);
+    returnity.ox = getfigureox(f[1]);
+    returnity.oy = getfigureoy(f[2]);
+    printf("this figure is %d ox %d oy %d  \n", returnity.figure, returnity.ox, returnity.oy);
     return returnity;
 }
 
 int getfigure(char f)
 {
+    printf("now i see (figure) %c \n", f);
     switch (f)
     {
     case 'K':
@@ -45,13 +47,14 @@ int getfigure(char f)
         return PAWN;
         break;
     default:
-        printf("Uncorrect figure");
+        printf("Uncorrect figure \n");
         return ERROR;
     }
 }
 
 int getfigureox(char f)
 {
+    printf("now i see (ox) %c \n", f);
     switch (f)
     {
     case 'a':
@@ -79,13 +82,14 @@ int getfigureox(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input char cordinate");
+        printf("Uncorrect input char cordinate\n");
         return ERROR;
     }
 }
 
 int getfigureoy(char f)
 {
+    printf("now i see (oy) %c \n", f);
     switch (f)
     {
     case '1':
@@ -113,7 +117,7 @@ int getfigureoy(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input digit cordinate");
+        printf("Uncorrect input digit cordinate\n");
         return ERROR;
     }
 }
