@@ -1,7 +1,8 @@
 # Тут указывается используемый в проекте язык программирования, можно указать несколько
 language: c
+dist: xenial
+compiler: gcc
+sudo: false
 script:
   git ls-files src/ | xargs clang-format -i src/*.c
   make
-compiler: gcc
-sudo: false
