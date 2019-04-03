@@ -1,5 +1,7 @@
 # Тут указывается используемый в проекте язык программирования, можно указать несколько
 language: c
-script: make
+script:
+  git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  make
 compiler: gcc
 sudo: false
