@@ -3,6 +3,5 @@ language: c
 dist: xenial
 compiler: gcc
 sudo: false
-script:
-  git ls-files src/ | xargs clang-format -i src/*.c
-  make
+script: git ls-files src/ | xargs clang-format -i src/*.c
+script: make
