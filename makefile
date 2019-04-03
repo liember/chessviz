@@ -22,3 +22,7 @@ board_read.o:
 
 logicworks.o: 
 	gcc -Wall -Werror -c src/logicworks.c -o build/logicworks.o $(FLAGS)
+
+clean:
+	rm -f *.o
+	rm -f main
