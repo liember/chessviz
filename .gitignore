@@ -16,3 +16,5 @@ chessviz
 *.bin
 
 *.ipch
+
+bin/
