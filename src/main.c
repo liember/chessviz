@@ -34,6 +34,10 @@ int main()
     FILE* inputfile;
     char result_string[20];
     char* fname = "input.txt";
+    char comand;
+    int step = 0;
+    figure_coordinate figuretarget;
+    figure_coordinate figure;
 
     inputfile = fopen(fname, "r");
     if (inputfile == NULL) {
@@ -41,18 +45,24 @@ int main()
         return 1;
     }
 
-    int step = 0;
     createhtml(chesstable, step++);
     while (fgets(result_string, sizeof(result_string), inputfile)) {
         for (int j = 0; j < strlen(result_string); j++) {
             if (result_string[j] == ' ') {
-                printf("start from %c \n", result_string[j + 1]);
-                figure_coordinate figure
-                        = identify_figure(&result_string[j + 1]);
-                figure_coordinate figuretarget
-                        = identify_figure_target(&result_string[j + 5]);
-                execute_comand(
-                        figure, result_string[j + 4], figuretarget, chesstable);
+                printf("start parsing from %c \n", result_string[j + 1]);
+                figure = identify_figure(&result_string[j + 1]);
+
+                if (figure.figure == 6) {
+                    figuretarget
+                            = identify_figure_target(&result_string[j + 4]);
+                    comand = result_string[j + 3];
+                } else {
+                    figuretarget
+                            = identify_figure_target(&result_string[j + 5]);
+                    comand = result_string[j + 4];
+                }
+
+                execute_comand(figure, comand, figuretarget, chesstable);
                 createhtml(chesstable, step++);
                 printf("end \n");
             }
