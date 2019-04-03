@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "lib/board_read.h"
 #include "lib/logicworks.h"
 
@@ -13,10 +14,13 @@
 #define BISHOP 5
 #define PAWN 6
 
-void execute_comand(figure_coordinate figure, char comand, figure_coordinate figuretarget, int *table)
+void execute_comand(
+        figure_coordinate figure,
+        char comand,
+        figure_coordinate figuretarget,
+        int* table)
 {
-    switch (figure.figure)
-    {
+    switch (figure.figure) {
     case KING:
         break;
     case QUEEN:
@@ -39,14 +43,15 @@ void execute_comand(figure_coordinate figure, char comand, figure_coordinate fig
     }
 }
 
-void movepawn(figure_coordinate figure, figure_coordinate figuretarget, int *table)
+void movepawn(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
 {
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     swap(&table[a], &table[b]);
 }
 
-void swap(int *a, int *b)
+void swap(int* a, int* b)
 {
     int t;
     t = *a;
