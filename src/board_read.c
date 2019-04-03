@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "lib/board_read.h"
 
 #define ERROR 0
@@ -12,21 +13,23 @@
 #define BISHOP 5
 #define PAWN 6
 
-figure_coordinate identify_figure(char *f)
+figure_coordinate identify_figure(char* f)
 {
     figure_coordinate returnity;
     returnity.figure = getfigure(f[0]);
     returnity.ox = getfigureox(f[1]);
     returnity.oy = getfigureoy(f[2]);
-    printf("this figure is %d ox %d oy %d  \n", returnity.figure, returnity.ox, returnity.oy);
+    printf("this figure is %d ox %d oy %d  \n",
+           returnity.figure,
+           returnity.ox,
+           returnity.oy);
     return returnity;
 }
 
 int getfigure(char f)
 {
     printf("now i see (figure) %c \n", f);
-    switch (f)
-    {
+    switch (f) {
     case 'K':
         return KING;
         break;
@@ -54,8 +57,7 @@ int getfigure(char f)
 int getfigureox(char f)
 {
     printf("now i see (ox) %c \n", f);
-    switch (f)
-    {
+    switch (f) {
     case 'a':
         return 0;
         break;
@@ -89,8 +91,7 @@ int getfigureox(char f)
 int getfigureoy(char f)
 {
     printf("now i see (oy) %c \n", f);
-    switch (f)
-    {
+    switch (f) {
     case '1':
         return 0;
         break;
