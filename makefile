@@ -1,8 +1,8 @@
 
 FLAGS := -std=c99
 
-all: dir page main.o board_print_html.o fileworks.o logicworks.o
-	gcc -Wall build/main.o build/board_print_html.o build/fileworks.o build/logicworks.o -o bin/main $(FLAGS)
+all: dir page main.o board_print_html.o board_read.o logicworks.o
+	gcc -Wall build/main.o build/board_print_html.o build/board_read.o build/logicworks.o -o bin/main $(FLAGS)
 
 dir:
 	rm -rf bin build ;
@@ -17,8 +17,8 @@ main.o:
 board_print_html.o: 
 	gcc -Wall -Werror -c src/board_print_html.c -o build/board_print_html.o $(FLAGS)
 
-fileworks.o: 
-	gcc -Wall -Werror -c src/fileworks.c -o build/fileworks.o $(FLAGS)
+board_read.o: 
+	gcc -Wall -Werror -c src/board_read.c -o build/board_read.o $(FLAGS)
 
 logicworks.o: 
 	gcc -Wall -Werror -c src/logicworks.c -o build/logicworks.o $(FLAGS)
