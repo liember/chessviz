@@ -49,7 +49,8 @@ int main()
         return 1;
     }
 
-    createhtml(chesstable, step++);
+    generatebeginpage();
+    beginhtml(chesstable, step++);
     while (fgets(result_string, sizeof(result_string), inputfile)) {
         for (int j = 0; j < strlen(result_string); j++) {
             if (result_string[j] == ' ') {
@@ -77,7 +78,7 @@ int main()
                     createhtml(chesstable, step++);
                     printf("end \n");
                 } else {
-                    createhtml(chesstable, step++);
+                    endhtml(chesstable, step++);
                     printf("Game over.\n");
                 }
             }
