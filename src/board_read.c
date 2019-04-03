@@ -16,13 +16,28 @@
 figure_coordinate identify_figure(char* f)
 {
     figure_coordinate returnity;
-    returnity.figure = getfigure(f[0]);
-    returnity.ox = getfigureox(f[1]);
-    returnity.oy = getfigureoy(f[2]);
+    if ((f[2] == '-') || (f[2] == 'x')) {
+        returnity.figure = PAWN;
+        returnity.ox = getfigureox(f[0]);
+        returnity.oy = getfigureoy(f[1]);
+    } else {
+        returnity.figure = getfigure(f[0]);
+        returnity.ox = getfigureox(f[1]);
+        returnity.oy = getfigureoy(f[2]);
+    }
     printf("this figure is %d ox %d oy %d  \n",
            returnity.figure,
            returnity.ox,
            returnity.oy);
+    return returnity;
+}
+
+figure_coordinate identify_figure_target(char* f)
+{
+    figure_coordinate returnity;
+    returnity.ox = getfigureox(f[0]);
+    returnity.oy = getfigureoy(f[1]);
+    printf("this figure target is ox %d oy %d  \n", returnity.ox, returnity.oy);
     return returnity;
 }
 
@@ -44,9 +59,6 @@ int getfigure(char f)
         break;
     case 'B':
         return BISHOP;
-        break;
-    case 'P':
-        return PAWN;
         break;
     default:
         printf("Uncorrect figure %c \n", f);
