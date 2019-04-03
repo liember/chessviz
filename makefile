@@ -9,7 +9,7 @@ dir:
 	mkdir -p bin build
 
 page:
-	cp  -R src/page bin/
+	cp  -r src/page/* bin/
 
 main.o: 
 	gcc -Wall -Werror -c src/main.c -o build/main.o $(FLAGS)
