@@ -11,5 +11,6 @@ int getfigureoy(char f);
 int getfigureox(char f);
 int getfigure(char f);
 figure_coordinate identify_figure(char* f);
+figure_coordinate identify_figure_target(char* f);
 
 #endif
