@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "board_print_html.h"
-#include "fileworks.h"
-#include "logicworks.h"
+#include "lib/fileworks.h"
+#include "lib/logicworks.h"
 
 #define WPAWN 0
 #define WKNIGHT 1

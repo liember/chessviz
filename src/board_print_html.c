@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "board_print_html.h"
+#include "lib/board_print_html.h"
 
 #define WPAWN 0
 #define WKNIGHT 1

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "fileworks.h"
+#include "lib/fileworks.h"
 
 #define ERROR 0
 
