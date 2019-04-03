@@ -15,20 +15,37 @@
 
 figure_coordinate identify_figure(char* f)
 {
+    printf("-start identify_figure %c \n", f[0]);
     figure_coordinate returnity;
-    returnity.figure = getfigure(f[0]);
-    returnity.ox = getfigureox(f[1]);
-    returnity.oy = getfigureoy(f[2]);
-    printf("this figure is %d ox %d oy %d  \n",
+    if ((f[2] == '-') || (f[2] == 'x')) {
+        returnity.figure = PAWN;
+        returnity.ox = getfigureox(f[0]);
+        returnity.oy = getfigureoy(f[1]);
+    } else {
+        returnity.figure = getfigure(f[0]);
+        returnity.ox = getfigureox(f[1]);
+        returnity.oy = getfigureoy(f[2]);
+    }
+    printf("-this figure is %d ox %d oy %d  \n\n",
            returnity.figure,
            returnity.ox,
            returnity.oy);
     return returnity;
 }
 
+figure_coordinate identify_figure_target(char* f)
+{
+    printf("-start identify_figure_target %c \n", f[0]);
+    figure_coordinate returnity;
+    returnity.ox = getfigureox(f[0]);
+    returnity.oy = getfigureoy(f[1]);
+    printf("-figure target is ox %d oy %d  \n\n", returnity.ox, returnity.oy);
+    return returnity;
+}
+
 int getfigure(char f)
 {
-    printf("now i see (figure) %c \n", f);
+    printf("--now i see (figure) %c \n", f);
     switch (f) {
     case 'K':
         return KING;
@@ -45,18 +62,15 @@ int getfigure(char f)
     case 'B':
         return BISHOP;
         break;
-    case 'P':
-        return PAWN;
-        break;
     default:
-        printf("Uncorrect figure %c \n", f);
+        printf("---Uncorrect figure %c \n", f);
         return ERROR;
     }
 }
 
 int getfigureox(char f)
 {
-    printf("now i see (ox) %c \n", f);
+    printf("--now i see (ox) %c \n", f);
     switch (f) {
     case 'a':
         return 0;
@@ -83,14 +97,14 @@ int getfigureox(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input char cordinate %c \n", f);
+        printf("---Uncorrect input char cordinate %c \n", f);
         return ERROR;
     }
 }
 
 int getfigureoy(char f)
 {
-    printf("now i see (oy) %c \n", f);
+    printf("--now i see (oy) %c \n", f);
     switch (f) {
     case '1':
         return 0;
@@ -117,7 +131,7 @@ int getfigureoy(char f)
         return 7;
         break;
     default:
-        printf("Uncorrect input digit cordinate %c \n", f);
+        printf("---Uncorrect input digit cordinate %c \n", f);
         return ERROR;
     }
 }
