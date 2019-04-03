@@ -1,7 +1,7 @@
 # Тут указывается используемый в проекте язык программирования, можно указать несколько
 language: c
 script:
-  git ls-files src/ | xargs clang-format -i -style=WebKit src/*.c
+  git ls-files src/ | xargs clang-format -i src/*.c
   make
 compiler: gcc
 sudo: false
