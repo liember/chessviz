@@ -20,20 +20,36 @@ void execute_comand(
         figure_coordinate figuretarget,
         int* table)
 {
+    switch (comand) {
+    case 'x':
+        atackfigure(figure, figuretarget, table);
+        break;
+    case '-':
+        movefigure(figure, figuretarget, table);
+        break;
+    default:
+        printf("Uncorrect comand\n");
+        break;
+    }
+}
+void movefigure(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
     switch (figure.figure) {
     case KING:
+        moveking(figure, figuretarget, table);
         break;
     case QUEEN:
-
+        movequeen(figure, figuretarget, table);
         break;
     case ROOK:
-
+        moverook(figure, figuretarget, table);
         break;
     case KNIGHT:
-
+        moveknight(figure, figuretarget, table);
         break;
     case BISHOP:
-
+        movebishop(figure, figuretarget, table);
         break;
     case PAWN:
         movepawn(figure, figuretarget, table);
@@ -44,6 +60,41 @@ void execute_comand(
 }
 
 void movepawn(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
+    swap(&table[a], &table[b]);
+}
+void moveknight(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
+    swap(&table[a], &table[b]);
+}
+void movequeen(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
+    swap(&table[a], &table[b]);
+}
+void moveking(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
+    swap(&table[a], &table[b]);
+}
+void moverook(
+        figure_coordinate figure, figure_coordinate figuretarget, int* table)
+{
+    int a = figure.oy * 8 + figure.ox;
+    int b = figuretarget.oy * 8 + figuretarget.ox;
+    swap(&table[a], &table[b]);
+}
+void movebishop(
         figure_coordinate figure, figure_coordinate figuretarget, int* table)
 {
     int a = figure.oy * 8 + figure.ox;
