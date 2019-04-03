@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "board_print_html.h"
+#include "lib/board_print_html.h"
 #include "lib/fileworks.h"
 #include "lib/logicworks.h"
 
