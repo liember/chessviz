@@ -19,6 +19,9 @@
 #define BKING 11
 #define EMPTY 12
 
+#define TRUE 100
+#define FALSE 200
+
 int main()
 {
     int chesstable[64]
@@ -36,6 +39,7 @@ int main()
     char* fname = "input.txt";
     char comand;
     int step = 0;
+    int flagofmate = FALSE;
     figure_coordinate figuretarget;
     figure_coordinate figure;
 
@@ -56,15 +60,26 @@ int main()
                     figuretarget
                             = identify_figure_target(&result_string[j + 4]);
                     comand = result_string[j + 3];
+                    if (result_string[j + 6] == '#') {
+                        flagofmate = TRUE;
+                    }
                 } else {
                     figuretarget
                             = identify_figure_target(&result_string[j + 5]);
                     comand = result_string[j + 4];
+                    if (result_string[j + 7] == '#') {
+                        flagofmate = TRUE;
+                    }
                 }
 
                 execute_comand(figure, comand, figuretarget, chesstable);
-                createhtml(chesstable, step++);
-                printf("end \n");
+                if (flagofmate == FALSE) {
+                    createhtml(chesstable, step++);
+                    printf("end \n");
+                } else {
+                    createhtml(chesstable, step++);
+                    printf("Game over.\n");
+                }
             }
         }
     }
