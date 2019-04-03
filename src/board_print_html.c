@@ -82,7 +82,7 @@ void createhtml(int* table, int step)
     FILE* outputhtmlpage;
     char fname[10];
 
-    sprintf(fname, "%d.html", step);
+    sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
     int figure = 0;
 
@@ -140,7 +140,8 @@ void createhtml(int* table, int step)
             "src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div "
             "class=\"card-body\"><h5 class=\"card-title\">Open source "
             "code</h5><p class=\"card-text\">Check source code in my GitHub. "
-            "Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to "
+            "Subscribe!!</p><a href=\"https://github.com/liember\" class=\"btn "
+            "btn-primary\">Go to "
             "GitHubq</a></div></div></div></div></div></div></body></html></"
             "html>\n");
 }
@@ -150,7 +151,7 @@ void beginhtml(int* table, int step)
     FILE* outputhtmlpage;
     char fname[10];
 
-    sprintf(fname, "%d.html", step);
+    sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
     int figure = 0;
 
@@ -204,7 +205,8 @@ void beginhtml(int* table, int step)
             "src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div "
             "class=\"card-body\"><h5 class=\"card-title\">Open source "
             "code</h5><p class=\"card-text\">Check source code in my GitHub. "
-            "Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to "
+            "Subscribe!!</p><a href=\"https://github.com/liember\" class=\"btn "
+            "btn-primary\">Go to "
             "GitHubq</a></div></div></div></div></div></div></body></html></"
             "html>\n");
 }
@@ -214,7 +216,7 @@ void endhtml(int* table, int step)
     FILE* outputhtmlpage;
     char fname[10];
 
-    sprintf(fname, "%d.html", step);
+    sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
     int figure = 0;
 
@@ -268,7 +270,84 @@ void endhtml(int* table, int step)
             "src=\"img/back.jpg\" class=\"card-img-top\" alt=\"...\"><div "
             "class=\"card-body\"><h5 class=\"card-title\">Open source "
             "code</h5><p class=\"card-text\">Check source code in my GitHub. "
-            "Subscribe!!</p><a href=\"#\" class=\"btn btn-primary\">Go to "
+            "Subscribe!!</p><a href=\"https://github.com/liember\" class=\"btn "
+            "btn-primary\">Go to "
             "GitHubq</a></div></div></div></div></div></div></body></html></"
             "html>\n");
+}
+
+void generatebeginpage()
+{
+    FILE* outputhtmlpage;
+    char fname[10];
+
+    sprintf(fname, "start.html");
+    outputhtmlpage = fopen(fname, "w+");
+    fprintf(outputhtmlpage,
+            "<!doctype html><html lang=\"en\"><head><meta "
+            "charset=\"utf-8\"><meta name=\"viewport\" "
+            "content=\"width=device-width, initial-scale=1, "
+            "shrink-to-fit=no\"><link rel=\"stylesheet\" "
+            "href=\"pages/styles.css\"><link rel=\"stylesheet\" "
+            "href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/"
+            "bootstrap.min.css\" "
+            "integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/"
+            "iJTQUOhcWr7x9JvoRxT2MZw1T\" "
+            "crossorigin=\"anonymous\"><title>ChessVis</title></"
+            "head><body><div class=\"container "
+            "mt-3\"><h1>ChessVis</h1><hr><h3>The program of the year "
+            "edition</h3></div><div class=\"container mt-3\"><div "
+            "class=\"row\"><div class=\"col-md-4\"><div "
+            "class=\"Chessboard\"><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div><div "
+            "class=\"white square\"></div><div class=\"black "
+            "square\"></div><div class=\"white square\"></div><div "
+            "class=\"black square\"></div><div class=\"white "
+            "square\"></div><div class=\"black square\"></div></div></div><div "
+            "class=\"col-md-4 container\"><div class=\"card mt-1\" "
+            "style=\"width: 18rem;\"><img src=\"pages/img/back.jpg\" "
+            "class=\"card-img-top\" alt=\"...\"><div class=\"card-body\"><h5 "
+            "class=\"card-title\">Press the button</h5><p "
+            "class=\"card-text\">If you want to begin wathing visualisation of "
+            "your chess notation.</p><a href=\"pages/0.html\" class=\"btn "
+            "btn-primary\">Go to chess "
+            "notation</a></div></div></div></div></div></div></body></html></"
+            "html>");
 }

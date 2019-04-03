@@ -49,6 +49,7 @@ int main()
         return 1;
     }
 
+    generatebeginpage();
     beginhtml(chesstable, step++);
     while (fgets(result_string, sizeof(result_string), inputfile)) {
         for (int j = 0; j < strlen(result_string); j++) {
