@@ -1,0 +1,4 @@
+#ifndef ERROR_PROCESSING_H
+#define ERROR_PROCESSING_H
+
+#endif
