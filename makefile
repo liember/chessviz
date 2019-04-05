@@ -1,11 +1,12 @@
 
+.PHONY: clean
+
 FLAGS := -std=c99
 
 all: dir main.o board_print_html.o board_read.o logicworks.o
 	gcc -Wall build/main.o build/board_print_html.o build/board_read.o build/logicworks.o -o bin/main $(FLAGS)
 
 dir:
-	rm -rf bin build 
 	mkdir -p bin build
 	cp -r pages bin
 
@@ -24,3 +25,4 @@ logicworks.o:
 clean:
 	rm -f *.o
 	rm -f main
+	rm -rf bin build
