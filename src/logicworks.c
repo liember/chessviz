@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "lib/board_read.h"
+#include "lib/error_processing.h"
 #include "lib/logicworks.h"
 
 #define ERROR 99
@@ -16,6 +17,10 @@
 
 #define ATTACK 11
 #define MOVE 22
+
+char* logic_execute_error
+        = "Неправильное чтение файла нотации(программа работает не правильнно, "
+          "на данном этапе выполнения этой ошибки возникать не должно)";
 
 void execute_comand(
         figure_coordinate figure,
@@ -43,7 +48,7 @@ void execute_comand(
         movepawn(figure, figuretarget, table, comand);
         break;
     default:
-        printf("Uncorrect figure\n");
+        error(logic_execute_error);
     }
 }
 

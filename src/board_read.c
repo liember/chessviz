@@ -3,6 +3,7 @@
 #include <string.h>
 
 #include "lib/board_read.h"
+#include "lib/error_processing.h"
 
 #define ERROR 0
 
@@ -12,6 +13,11 @@
 #define KNIGHT 4
 #define BISHOP 5
 #define PAWN 6
+
+char* parse_digit_error
+        = "Неверные входные данные: численные координаты фигуры";
+char* parse_char_error = "GKSDFOPDSK:JLF:L";
+char* parse_figuretype_error = "GKSDFOPDSK:JLF:L";
 
 figure_coordinate identify_figure(char* f)
 {
@@ -64,6 +70,7 @@ int getfigure(char f)
         break;
     default:
         printf("---Uncorrect figure %c \n", f);
+        error(parse_figuretype_error);
         return ERROR;
     }
 }
@@ -98,6 +105,7 @@ int getfigureox(char f)
         break;
     default:
         printf("---Uncorrect input char cordinate %c \n", f);
+        error(parse_char_error);
         return ERROR;
     }
 }
@@ -132,6 +140,7 @@ int getfigureoy(char f)
         break;
     default:
         printf("---Uncorrect input digit cordinate %c \n", f);
+        error(parse_digit_error);
         return ERROR;
     }
 }

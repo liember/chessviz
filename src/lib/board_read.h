@@ -1,5 +1,6 @@
 #ifndef BOARD_READ_H
 #define BOARD_READ_H
+
 typedef struct //положение фигРЫ
 {
     int figure;
