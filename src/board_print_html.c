@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "lib/error_processing.h"
+
 #include "lib/board_print_html.h"
 
 #define WPAWN 0
@@ -17,6 +19,8 @@
 #define BQUEEN 10
 #define BKING 11
 #define EMPTY 12
+
+char* htmlfile_open_error = "Ошибка генерации HTML.\n";
 
 void createfigurehtml(int element, FILE* outputhtmlpage)
 {
@@ -84,6 +88,10 @@ void createhtml(int* table, int step)
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
+    if (outputhtmlpage == NULL) {
+        printf("не могу открыть файл '%s'\n", fname);
+        error(htmlfile_open_error);
+    }
     int figure = 0;
 
     fprintf(outputhtmlpage, "<!doctype html><html lang=\"en\">");
@@ -153,6 +161,10 @@ void beginhtml(int* table, int step)
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
+    if (outputhtmlpage == NULL) {
+        printf("не могу открыть файл '%s'\n", fname);
+        error(htmlfile_open_error);
+    }
     int figure = 0;
 
     fprintf(outputhtmlpage, "<!doctype html><html lang=\"en\">");
@@ -218,6 +230,10 @@ void endhtml(int* table, int step)
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
+    if (outputhtmlpage == NULL) {
+        printf("не могу открыть файл '%s'\n", fname);
+        error(htmlfile_open_error);
+    }
     int figure = 0;
 
     fprintf(outputhtmlpage, "<!doctype html><html lang=\"en\">");
@@ -283,6 +299,10 @@ void generatebeginpage()
 
     sprintf(fname, "start.html");
     outputhtmlpage = fopen(fname, "w+");
+    if (outputhtmlpage == NULL) {
+        printf("не могу открыть файл '%s'\n", fname);
+        error(htmlfile_open_error);
+    }
     fprintf(outputhtmlpage,
             "<!doctype html><html lang=\"en\"><head><meta "
             "charset=\"utf-8\"><meta name=\"viewport\" "

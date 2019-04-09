@@ -3,6 +3,7 @@
 
 #include "lib/board_print_html.h"
 #include "lib/board_read.h"
+#include "lib/error_processing.h"
 #include "lib/logicworks.h"
 
 #define WPAWN 0
@@ -35,6 +36,7 @@ int main()
                BROOK, BKNIGHT, BBISHOP, BKING, BQUEEN, BBISHOP, BKNIGHT, BROOK};
 
     FILE* inputfile;
+    char* file_open_error = "Ошибка открытия файла нотации.\n";
     char result_string[20];
     char* fname = "input.txt";
     char comand;
@@ -46,7 +48,7 @@ int main()
     inputfile = fopen(fname, "r");
     if (inputfile == NULL) {
         printf("не могу открыть файл '%s'\n", fname);
-        return 1;
+        error(file_open_error);
     }
 
     generatebeginpage();
@@ -85,6 +87,5 @@ int main()
         }
     }
     fclose(inputfile);
-    printf("Воспроизведение партии успешно завершено.\n");
     return 0;
 }
