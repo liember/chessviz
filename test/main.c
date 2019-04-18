@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "lib/board_print_html.h"
-#include "lib/board_read.h"
-#include "lib/error_processing.h"
-#include "lib/logicworks.h"
+#include "../src/lib/board_print_html.h"
+#include "../src/lib/board_read.h"
+#include "../src/lib/error_processing.h"
+#include "../src/lib/logicworks.h"
 
 #define WPAWN 0
 #define WKNIGHT 1
@@ -22,6 +22,15 @@
 
 #define TRUE 100
 #define FALSE 200
+
+#define CTEST_MAIN
+
+// uncomment lines below to enable/disable features. See README.md for details
+#define CTEST_SEGFAULT
+//#define CTEST_NO_COLORS
+//#define CTEST_COLOR_OK
+
+#include "../thirdparty/ctest.h"
 
 int main()
 {
