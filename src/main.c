@@ -50,7 +50,7 @@ int main()
         printf("не могу открыть файл '%s'\n", fname);
         error(file_open_error);
     }
-
+    // saffasfas
     generatebeginpage();
     beginhtml(chesstable, step++);
     while (fgets(result_string, sizeof(result_string), inputfile)) {
