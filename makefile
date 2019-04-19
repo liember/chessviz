@@ -35,11 +35,11 @@ start: clean all
 #-----------------------------------------------------------
 
 $(OUT)maint.o: all
-	$(CC) $(LDFLAGS) test/main.c -c -o $(OUT)maint.o
+	$(CC) $(CCFLAGS) test/main.c -c -o $(OUT)maint.o
 	
 $(OUT)board_test.o:
-	$(CC) $(LDFLAGS) test/board_test.c -c -o $(OUT)board_test.o
+	$(CC) $(CCFLAGS) test/board_test.c -c -o $(OUT)board_test.o
 	
 
 test: $(OUT)maint.o  $(OUT)board_test.o $(ALLOBJ) 
-	$(CC) $(LDFLAGS) $(OUT)maint.o $(OUT)board_test.o  $(ALLOBJT) -o bin/test
+	$(CC) $(CCFLAGS) $(OUT)maint.o $(OUT)board_test.o  $(ALLOBJT) -o bin/test
