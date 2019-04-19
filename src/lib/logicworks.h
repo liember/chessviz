@@ -1,7 +1,8 @@
 #ifndef LOGICKWORKS_H
 #define LOGICKWORKS_H
 
-void swap(int* a, int* b);
+void smartswap(int* a, int* b);
+void atackfigure(int* a, int* b);
 void movepawn(
         figure_coordinate figure,
         figure_coordinate figuretarget,
@@ -37,7 +38,6 @@ void execute_comand(
         char comand,
         figure_coordinate figuretarget,
         int* table);
-void atackfigure(int* a, int* b);
 
 void movefigure(
         figure_coordinate figure, figure_coordinate figuretarget, int* table);

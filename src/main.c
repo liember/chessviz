@@ -54,7 +54,7 @@ int main()
     generatebeginpage();
     beginhtml(chesstable, step++);
     while (fgets(result_string, sizeof(result_string), inputfile)) {
-        for (int j = 0; j < strlen(result_string); j++) {
+        for (int j = 0; j < (signed int)strlen(result_string); j++) {
             if (result_string[j] == ' ') {
                 printf("start parsing from %c \n", result_string[j + 1]);
                 figure = identify_figure(&result_string[j + 1]);

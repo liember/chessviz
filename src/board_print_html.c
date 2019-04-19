@@ -84,7 +84,7 @@ void createfigurehtml(int element, FILE* outputhtmlpage)
 void createhtml(int* table, int step)
 {
     FILE* outputhtmlpage;
-    char fname[10];
+    char fname[20];
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
@@ -157,7 +157,7 @@ void createhtml(int* table, int step)
 void beginhtml(int* table, int step)
 {
     FILE* outputhtmlpage;
-    char fname[10];
+    char fname[20];
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
@@ -226,7 +226,7 @@ void beginhtml(int* table, int step)
 void endhtml(int* table, int step)
 {
     FILE* outputhtmlpage;
-    char fname[10];
+    char fname[20];
 
     sprintf(fname, "pages/%d.html", step);
     outputhtmlpage = fopen(fname, "w+");
@@ -295,7 +295,7 @@ void endhtml(int* table, int step)
 void generatebeginpage()
 {
     FILE* outputhtmlpage;
-    char fname[10];
+    char fname[20];
 
     sprintf(fname, "start.html");
     outputhtmlpage = fopen(fname, "w+");

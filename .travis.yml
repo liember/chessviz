@@ -7,4 +7,6 @@ script:
  - git ls-files src/ | xargs clang-format -i src/*.c 
  - git diff --exit-code
  - make
+ - make test
+
  

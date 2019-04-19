@@ -1,31 +1,45 @@
-
 .PHONY: clean
+.PHONY: test
+CCFLAGS=-Wall -Wextra -Wshadow -Werror -std=gnu17 
+CC=clang
+OUT= build/
+EXE = bin/
+SRC=src/
+ALLOBJ = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  $(OUT)main.o
+ALLOBJT = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  
 
-FLAGS := -std=c99
+all: bin build $(EXE)main $(EXE)pages
 
-all: dir error_processing.o board_print_html.o board_read.o logicworks.o  main.o 
-	gcc -Wall build/main.o build/board_print_html.o build/board_read.o build/logicworks.o build/error_processing.o -o bin/main $(FLAGS)
+$(EXE)main: $(ALLOBJ) 
+	$(CC) $(CCFLAGS) $(ALLOBJ) -o $@
 
-dir:
-	mkdir -p bin build
+bin: 
+	mkdir -p bin 
+
+bin/pages:
 	cp -r pages bin
 
-main.o: 
-	gcc -Wall -Werror -c src/main.c -o build/main.o $(FLAGS)
+build:
+	mkdir -p build
 
-error_processing.o:
-	gcc -Wall -Werror -c src/error_processing.c -o build/error_processing.o $(FLAGS)
-
-board_print_html.o: 
-	gcc -Wall -Werror -c src/board_print_html.c -o build/board_print_html.o $(FLAGS)
-
-board_read.o: 
-	gcc -Wall -Werror -c src/board_read.c -o build/board_read.o $(FLAGS)
-
-logicworks.o: 
-	gcc -Wall -Werror -c src/logicworks.c -o build/logicworks.o $(FLAGS)
+$(OUT)%.o: $(SRC)%.c 
+	$(CC) $(CCFLAGS) -MP -MMD -c -o $@ $<
 
 clean:
-	rm -f *.o
-	rm -f main
 	rm -rf bin build
+	 
+start: clean all 
+	cp -r input.txt bin
+	./bin/main
+
+#-----------------------------------------------------------
+
+$(OUT)maint.o: all
+	$(CC) $(LDFLAGS) test/main.c -c -o $(OUT)maint.o
+	
+$(OUT)board_test.o:
+	$(CC) $(LDFLAGS) test/board_test.c -c -o $(OUT)board_test.o
+	
+
+test: $(OUT)maint.o  $(OUT)board_test.o $(ALLOBJ) 
+	$(CC) $(LDFLAGS) $(OUT)maint.o $(OUT)board_test.o  $(ALLOBJT) -o bin/test
