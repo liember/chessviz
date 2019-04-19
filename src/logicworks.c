@@ -61,7 +61,7 @@ void movepawn(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
@@ -75,7 +75,7 @@ void moveknight(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
@@ -89,7 +89,7 @@ void movequeen(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
@@ -103,7 +103,7 @@ void moveking(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
@@ -117,7 +117,7 @@ void moverook(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
@@ -131,13 +131,13 @@ void movebishop(
     int a = figure.oy * 8 + figure.ox;
     int b = figuretarget.oy * 8 + figuretarget.ox;
     if (comand == '-') {
-        swap(&table[a], &table[b]);
+        smartswap(&table[a], &table[b]);
     } else {
         atackfigure(&table[a], &table[b]);
     }
 }
 
-void swap(int* a, int* b)
+void smartswap(int* a, int* b)
 {
     int t;
     t = *a;
