@@ -1,12 +1,14 @@
 .PHONY: clean
-CCFLAGS=-Wall -Wextra -Wshadow -Werror -std=c99
-CC=gcc
+.PHONY: test
+CCFLAGS=-Wall -Wextra -Wshadow -Werror -std=gnu17 
+CC=clang
 OUT= build/
 EXE = bin/
 SRC=src/
 ALLOBJ = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  $(OUT)main.o
+ALLOBJT = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  
 
-all: bin build bin/main $(EXE)pages
+all: bin build $(EXE)main $(EXE)pages
 
 $(EXE)main: $(ALLOBJ) 
 	$(CC) $(CCFLAGS) $(ALLOBJ) -o $@
@@ -20,20 +22,8 @@ bin/pages:
 build:
 	mkdir -p build
 
-$(OUT)main.o: $(SRC)main.c
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(OUT)error_processing.o: $(SRC)error_processing.c
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(OUT)board_print_html.o: $(SRC)board_print_html.c
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(OUT)board_read.o: $(SRC)board_read.c
-	$(CC) $(CCFLAGS) -c $< -o $@
-
-$(OUT)logicworks.o: $(SRC)logicworks.c
-	$(CC) $(CCFLAGS) -c $< -o $@
+$(OUT)%.o: $(SRC)%.c 
+	$(CC) $(CCFLAGS) -MP -MMD -c -o $@ $<
 
 clean:
 	rm -rf bin build
@@ -42,6 +32,14 @@ start: clean all
 	cp -r input.txt bin
 	./bin/main
 
-test: $(ALLOBJ) 
-	$(CC) $(CCFLAGS) $(ALLOBJ) -o $@
+#-----------------------------------------------------------
 
+$(OUT)maint.o: all
+	$(CC) $(LDFLAGS) test/main.c -c -o $(OUT)maint.o
+	
+$(OUT)board_test.o:
+	$(CC) $(LDFLAGS) test/board_test.c -c -o $(OUT)board_test.o
+	
+
+test: $(OUT)maint.o  $(OUT)board_test.o $(ALLOBJ) 
+	$(CC) $(LDFLAGS) $(OUT)maint.o $(OUT)board_test.o  $(ALLOBJT) -o bin/test
