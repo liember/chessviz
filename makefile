@@ -17,7 +17,7 @@ bin:
 	mkdir -p bin 
 
 bin/pages:
-	cp -r pages bin
+	cp -r $(SRC)pages bin
 
 build:
 	mkdir -p build
@@ -28,11 +28,11 @@ $(OUT)%.o: $(SRC)%.c
 clean:
 	rm -rf bin build
 	 
-start: clean all 
+reinstall: clean all 
 	cp -r input.txt bin
 	./bin/main
 
-#-----------------------------------------------------------
+#-----------------------------tests------------------------------
 
 $(OUT)maint.o: all
 	$(CC) $(CCFLAGS) test/main.c -c -o $(OUT)maint.o
