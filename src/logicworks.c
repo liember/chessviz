@@ -14,6 +14,7 @@
 #define KNIGHT 4
 #define BISHOP 5
 #define PAWN 6
+#define EMPTY 12
 
 #define ATTACK 11
 #define MOVE 22
@@ -139,15 +140,25 @@ void movebishop(
 
 void smartswap(int* a, int* b)
 {
-    int t;
-    t = *a;
-    *a = *b;
-    *b = t;
+    char* erro = "Ошибка\n";
+    if (*b == EMPTY) {
+        int t;
+        t = *a;
+        *a = *b;
+        *b = t;
+    } else {
+        error(erro);
+    }
 }
 
 void atackfigure(int* a, int* b)
 {
-    int t = 12;
-    *b = *a;
-    *a = t;
+    char* erro = "Ошибка\n";
+    if (*b == EMPTY) {
+        error(erro);
+    } else {
+        int t = 12;
+        *b = *a;
+        *a = t;
+    }
 }
