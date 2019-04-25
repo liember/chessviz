@@ -17,5 +17,7 @@ chessviz
 *.ipch
 
 # ---- ДИРРЕКТОРИИ ----
-bin/
-build/
+bin/*
+build/*
+
+*.html
