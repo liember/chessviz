@@ -26,4 +26,17 @@
     </td>
     <td><img src="https://bipbap.ru/wp-content/uploads/2017/10/0_8eb56_842bba74_XL-640x400.jpg" alt="lorem""></td>
   </tr>
+      <H3>Как запустить:</H3>
+      <ul>
+        <li>Для компиляции: make</li>
+        <li>Для компиляции тестов: make test</li>
+        <li>Для перкомпиляции(удаляет всё, компилирует снова): make reinstall</li>
+        <li>Бинарные файлы хранятся в папке bin
+          <ul>
+           <li>Запуск программы ./main</li>  
+           <li>Запуск тестов ./test</li>              
+          </ul>
+        </li>
+      <li>Запуск выходного HTML: start.html (даблклик :D) </li>
+      </ul>
 </table>
