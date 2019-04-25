@@ -8,15 +8,15 @@ SRC=src/
 ALLOBJ = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  $(OUT)main.o
 ALLOBJT = $(OUT)error_processing.o $(OUT)board_print_html.o $(OUT)board_read.o $(OUT)logicworks.o  
 
-all: bin build $(EXE)main $(EXE)pages
+all: $(EXE) build $(EXE)main $(EXE)pages
 
 $(EXE)main: $(ALLOBJ) 
 	$(CC) $(CCFLAGS) $(ALLOBJ) -o $@
 
-bin: 
+$(EXE): 
 	mkdir -p bin 
 
-bin/pages:
+$(EXE)pages:
 	cp -r $(SRC)pages bin
 	cp -r input.txt bin
 
