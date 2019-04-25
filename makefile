@@ -18,6 +18,7 @@ bin:
 
 bin/pages:
 	cp -r $(SRC)pages bin
+	cp -r input.txt bin
 
 build:
 	mkdir -p build

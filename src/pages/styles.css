@@ -2,53 +2,41 @@
 
 .Chessboard
 {
-width:
-    390px;
-height:
-    390px;
-    border - style : solid;
+width:390px;
+height:390px;
+border-style : solid;
 }
 
 .square
 {
-    float : left;
-border:
-    0px double black;
-width:
-    48px;
-height:
-    48px;
-display:
-    inline - block;
+float : left;
+border: 0px double black;
+width:48px;
+height:48px;
+display: inline-block;
 }
 
 .white
 {
-    background - color : #bFbFbF;
+background-color : #bFbFbF;
 }
 
 .black
 {
-    background - color : #313131;
+background-color : #313131;
 }
 
-.figure : hover
+.figure:hover
 {
-position:
-    absolute;
-width:
-    50px;
-height:
-    50px;
+position: absolute;
+width:50px;
+height: 50px;
 }
 
 .grayy
 {
-    float : left;
-width:
-    5vw;
-height:
-    100vh;
-background:
-# 313131c7;
+float : left;
+width: 5vw;
+height:100vh;
+background:#313131c7;
 }
