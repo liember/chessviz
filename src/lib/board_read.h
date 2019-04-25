@@ -1,6 +1,4 @@
-#ifndef BOARD_READ_H
-#define BOARD_READ_H
-
+#pragma once
 typedef struct //положение фигРЫ
 {
     int figure;
@@ -14,4 +12,3 @@ int getfigure(char f);
 figure_coordinate identify_figure(char* f);
 figure_coordinate identify_figure_target(char* f);
 
-#endif

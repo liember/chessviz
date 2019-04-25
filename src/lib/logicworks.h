@@ -1,6 +1,4 @@
-#ifndef LOGICKWORKS_H
-#define LOGICKWORKS_H
-
+#pragma once
 void smartswap(int* a, int* b);
 void atackfigure(int* a, int* b);
 void movepawn(
@@ -42,4 +40,4 @@ void execute_comand(
 void movefigure(
         figure_coordinate figure, figure_coordinate figuretarget, int* table);
 
-#endif
+

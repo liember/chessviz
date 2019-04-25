@@ -1,5 +1,3 @@
-#ifndef ERROR_PROCESSING_H
-#define ERROR_PROCESSING_H
-
+#pragma once
 void error(char* ercode);
-#endif
+
